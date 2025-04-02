@@ -1,0 +1,18 @@
+{
+    "name": "hexlet/code",
+    "description": "first games",
+    "type": "library",
+    "bin": [
+        "bin/brain-games"
+    ],
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "BrainGames\\Cli\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^5.0 || ^8.0",
+        "wp-cli/php-cli-tools": "^0.12.4"
+    }
+}
