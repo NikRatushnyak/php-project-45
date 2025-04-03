@@ -3,6 +3,7 @@
     "description": "first games",
     "type": "library",
     "bin": [
+        "bin/brain-games",
         "bin/brain-games"
     ],
     "license": "MIT",
