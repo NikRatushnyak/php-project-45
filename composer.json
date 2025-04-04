@@ -4,7 +4,8 @@
     "type": "library",
     "bin": [
         "bin/brain-games",
-        "bin/brain-even"
+        "bin/brain-even",
+        "bin/brain-calc"
     ],
     "license": "MIT",
     "autoload": {

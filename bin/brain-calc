@@ -1,0 +1,44 @@
+#!/usr/bin/env php
+<?php
+
+namespace BrainGames\Cli;
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use function cli\line;
+use function cli\prompt;
+
+line('Welcome to the Brain Game!');
+$name = prompt('May I have your name?');
+line("Hello, %s!", $name);// основной скрипт
+line('What is the result of the expression?');
+
+function calculate(int $operand1, int $operand2, string $operator): int
+{
+    switch ($operator) {
+        case '+':
+            return $operand1 + $operand2;
+        case '-':
+            return $operand1 - $operand2;
+        case '*':
+            return $operand1 * $operand2;
+    }
+    exit;
+}
+
+for ($i = 0; $i < 3; $i++) {
+    $operand1 = rand(1, 19);
+    $operand2 = rand(1, 19);
+    $operator = ['+', '-', '*'];
+    $operator = $operator[array_rand($operator)];
+    line("Question: $operand1 $operator $operand2");
+    $totalResult = calculate($operand1, $operand2, $operator);
+    $result = (int)prompt("Your answer ", false);
+    if ($result === $totalResult) {
+        line('Correct');
+    } else {
+        line("$result is wrong answer ;(. Correct answer was $totalResult.\nLets try again, $name");
+    }
+}
+
+line("Congratulations! $name");
