@@ -33,12 +33,12 @@ for ($i = 0; $i < 3; $i++) {
     $operator = $operator[array_rand($operator)];
     line("Question: $operand1 $operator $operand2");
     $totalResult = calculate($operand1, $operand2, $operator);
-    $result = (int)prompt("Your answer ", false);
+    $result = (int)prompt("Your answer ",false, $marker =': ', true);
     if ($result === $totalResult) {
         line('Correct');
     } else {
-        line("$result is wrong answer ;(. Correct answer was $totalResult.\nLets try again, $name");
+        line ("$result is wrong answer ;(. Correct answer was $totalResult.\nLets try again, $name");
+        exit();
     }
 }
-
 line("Congratulations! $name");
