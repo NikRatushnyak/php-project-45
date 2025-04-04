@@ -27,8 +27,8 @@ function calculate(int $operand1, int $operand2, string $operator): int
 }
 
 for ($i = 0; $i < 3; $i++) {
-    $operand1 = rand(1, 19);
-    $operand2 = rand(1, 19);
+    $operand1 = rand(1, 9);
+    $operand2 = rand(1, 9);
     $operator = ['+', '-', '*'];
     $operator = $operator[array_rand($operator)];
     line("Question: $operand1 $operator $operand2");

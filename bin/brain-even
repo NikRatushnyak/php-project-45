@@ -15,7 +15,7 @@ line("Hello, %s!", $name);
 line('Answer "yes" if the number is even, otherwise answer "no".');
 
 for ($i = 0; $i < 3; $i++) {
-    $int = rand(1, 19);
+    $int = rand(1, 9);
     line("Qestion: $int");
     $answer = prompt("You answer", false);
     if (($answer === 'yes' && $int % 2 === 0) || ($answer === 'no' && $int % 2 !== 0)) {
