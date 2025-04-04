@@ -9,7 +9,7 @@ use function cli\line;
 use function cli\prompt;
 
 line('Welcome to the Brain Game!');
-$name = prompt('May I have your name?');
+$name = prompt("May I have your name? ", false, false, true);
 line("Hello, %s!", $name);// основной скрипт
 line('What is the result of the expression?');
 
@@ -33,7 +33,7 @@ for ($i = 0; $i < 3; $i++) {
     $operator = $operator[array_rand($operator)];
     line("Question: $operand1 $operator $operand2");
     $totalResult = calculate($operand1, $operand2, $operator);
-    $result = (int)prompt("Your answer ",false, $marker =': ', true);
+    $result = (int)prompt("Your answer ", false, false, true);
     if ($result === $totalResult) {
         line('Correct');
     } else {
